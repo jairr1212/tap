@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aplic. Web de jQuery Mobile</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+$(document).on("pagecreate","#page2",function(){
+  $("p").on("tap",function(){
+    $(this).hide();
+  });                       
+});
+</script>
+<script>
+$(document).on("pagecreate","#page3",function(){
+  $("p").on("taphold",function(){
+    $(this).hide();
+  });                       
+});
+</script>
+<script>
+$(document).on("pagecreate","#page4",function(){
+  $("p").on("swipe",function(){
+    $("span").text("Swipe detected!");
+  });                       
+});
+</script>
+<script>
+$(document).on("pagecreate","#page5",function(){
+  $("p").on("swipeleft",function(){
+    alert("You swiped left!");
+  });                       
+});
+</script>
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>Página uno</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview">
+			<li><a href="#page2">Página dos</a></li>
+            <li><a href="#page3">Página tres</a></li>
+			<li><a href="#page4">Página cuatro</a></li>
+            <li><a href="#page4">Página cinco</a></li>
+		</ul>		
+	</div>
+	<div data-role="footer">
+		<h4>Pie de página</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page2">
+	<div data-role="header">
+		<h1>Página dos</h1>
+	</div>
+	<div data-role="content">	
+		 <p>If you tap me, I will disappear.</p>
+    <p>Tap me away!</p>
+    <p>Tap me too!</p>		
+	</div>
+	<div data-role="footer">
+		<h4>Pie de página</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page3">
+	<div data-role="header">
+		<h1>Página tres</h1>
+	</div>
+	<div data-role="content">	
+		<p>If you tap and hold me for one second, I will disappear.</p>
+    <p>Tap and hold me!</p>
+    <p>Tap and hold me too!</p>		
+	</div>
+	<div data-role="footer">
+		<h4>Pie de página</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page4">
+	<div data-role="header">
+		<h1>Página cuatro</h1>
+	</div>
+	<div data-role="content">	
+	<p>Swipe this text or in the box below.</p>
+    <p style="border:1px solid black;height:200px;width:200px;"></p>
+    <p><span style="color:red"></span></p>				
+	</div>
+	<div data-role="footer">
+		<h4>Pie de página</h4>
+	</div>
+</div>
+<div data-role="page" id="page5">
+	<div data-role="header">
+		<h1>Página cinco</h1>
+	</div>
+	<div data-role="content">	
+	 <p style="border:1px solid black;margin:5px;">Swipe me in the left direction - do not swipe outside the border!</p>
+	<div data-role="footer">
+		<h4>Pie de página</h4>
+	</div>
+</div>
+
+
+
+</body>
+</html>
